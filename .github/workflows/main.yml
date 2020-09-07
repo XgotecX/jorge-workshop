@@ -1,0 +1,20 @@
+name: Deploy Development
+on:
+  push:
+    branches:
+      - development
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.4.x'
+
+    - name: Enviar Notificaion
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELGRAM_CHATID }}
+        token: ${{ secrets.TELEGRAM_BOTTOKEN }}
+        args: Merge ${github.head_ref} into Development
