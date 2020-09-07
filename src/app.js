@@ -6,6 +6,7 @@ import HelloController from './controllers/HelloController';
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+print('Algo');
 
 HelloController.mountController(app);
 
