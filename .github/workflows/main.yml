@@ -13,8 +13,8 @@ jobs:
         node-version: '14.4.x'
 
     - name: Set output
-        id: vars
-        run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
+      id: vars
+      run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
 
     - name: Enviar Notificaion
       uses: appleboy/telegram-action@master
