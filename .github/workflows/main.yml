@@ -14,7 +14,7 @@ jobs:
 
     - name: Set output
       id: vars
-      run: echo ::set-output name=short_ref::${{github.event_name}}
+      run: echo ::set-output name=short_ref::${{github.ref}}
 
     - name: Enviar Notificaion
       uses: appleboy/telegram-action@master
